@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteRule ^error$ error.html [NC]
+RewriteRule ^writer$ /var/www/hewlett-packard-lovecraft.tk/public_html/writing/writing.html [NC]
+Redirect ^admin$  https://www.youtube.com/watch?v=yPYZpwSpKmA
+
+<Directory "textbooks/">
+    Options FancyIndexing FollowSymlinks
+    IndexOptions HTMLTable
+    IndexOptions SuppressColumnsorting
+</Directory>
+

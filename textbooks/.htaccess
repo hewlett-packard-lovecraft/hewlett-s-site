@@ -1,0 +1,6 @@
+<Directory "textbooks/">
+    Options FancyIndexing FollowSymlinks
+    IndexOptions HTMLTable
+    IndexOptions SuppressColumnsorting
+</Directory>
+
