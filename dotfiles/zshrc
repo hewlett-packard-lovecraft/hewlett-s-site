@@ -99,14 +99,13 @@ source $ZSH/oh-my-zsh.sh
  alias ohmyzsh="source ~/.oh-my-zsh"
 
 alias sdnf='sudo dnf'
-alias svi='sudo vim'
 alias svim='sudo nvim'
 alias vim='nvim'
 alias vi='vim'
 alias s='sudo'
-alias u='sudo dnf upgrade --refresh -y && sudo flatpak update -y && sudo fwupdmgr update -y'
+alias u='sudo dnf upgrade -y --refresh && sudo flatpak update -y'
 alias pdf='pandoc -s -o'
-alias njs-project='npx license mit && npx gitignore node && npx covgen mrmist3r311@gmail.com && npm init -y'
+alias njs-project='npx license mit && npx gitignore node && npx covgen contact@haomigxia.xyz && npm init -y'
 
 alias cler="espeak 'fuck you'"
 alias clar="espeak 'fuck you'"
@@ -127,6 +126,11 @@ alias sodu="espeak 'fuck you'"
 alias vmi="espeak 'fuck you'"
 alias svin="espeak 'fuck you'"
 alias svmi="espeak 'fuck you'"
+
+alias laptopmode="sudo egpu-switcher switch internal"
+alias egpumode="sudo egpu-switcher switch auto"
+
+alias mux='tmux new -A -s ${USER}'
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
@@ -171,5 +175,12 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
 
 # apply config
 antigen apply
+
+# map alt + hjkl to arrow keys using xmodmap
+setxkbmap -layout us -variant altgr-intl -option nodeadkeys
+xmodmap -e "keycode 43 = h H NoSymbol NoSymbol Left   NoSymbol"
+xmodmap -e "keycode 44 = j J NoSymbol NoSymbol Down   NoSymbol"
+xmodmap -e "keycode 45 = k K NoSymbol NoSymbol Up     NoSymbol"
+xmodmap -e "keycode 46 = l L NoSymbol NoSymbol Right  NoSymbol"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
